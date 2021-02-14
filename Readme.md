@@ -1,15 +1,13 @@
-Good day:raised_hands: Wecolme to my GitHub. My name is **Sorang Kim**. I am an undergraduate who is interested in **deep learning**. Among deep learning, I am interested in **learning for generalization** and studying to solve the **limitations of deep learning** like **meta-learning** and **Lifelong-learning**.
+Good day​​ Wecolme to my GitHub. My name is **Sorang Kim**. I am an undergraduate who is interested in **deep learning**. Among deep learning, I am interested in **learning for generalization** and studying to solve the **limitations of deep learning** like **meta-learning** and **Lifelong-learning**.
 
----
-
-### :school_satchel: Education
+## Education
 
 **Ulsan National Institute of Science and Technology (UNIST)**. Mar 2018 - Now
 
 - Major : School of Computer Science Engineering (CSE).
 - Minor : School of Industrial Engineering (IE).
 
-### :seedling:  Experiment
+## Experiment
 
 - [**Machine Inteligence and Information Learning lab**](https://sites.google.com/view/swyoon89/research-interests) Intern. July 2020 - Now
 
@@ -21,7 +19,7 @@ Good day:raised_hands: Wecolme to my GitHub. My name is **Sorang Kim**. I am an 
 
   
 
-### :bulb: Skills
+## Skills
 
 - Programming skills : Python, C, C++, MATLAB
 
@@ -29,6 +27,6 @@ Good day:raised_hands: Wecolme to my GitHub. My name is **Sorang Kim**. I am an 
 
   
 
-### :ok_woman: Social Info
+## Social Info
 
 - E-mail : solangii@unist.ac.kr
