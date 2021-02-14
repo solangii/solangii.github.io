@@ -1,4 +1,10 @@
+<img src="img/IMG_0145.jpg" style="zoom:10%;" />
+
+
+
 Good day​​ Wecolme to my GitHub. My name is **Sorang Kim**. I am an undergraduate who is interested in **deep learning**. Among deep learning, I am interested in **learning for generalization** and studying to solve the **limitations of deep learning** like **meta-learning** and **Lifelong-learning**.
+
+
 
 ## Education
 
