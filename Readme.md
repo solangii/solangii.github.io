@@ -15,7 +15,7 @@ Good day​​ Wecolme to my GitHub. My name is **Sorang Kim**. I am an undergra
 
 ## Experiment
 
-- [**Machine Inteligence and Information Learning lab**](https://sites.google.com/view/swyoon89/research-interests) Intern. July 2020 - Now
+- [**Machine Intelligence and Information Learning lab**](https://sites.google.com/view/swyoon89/research-interests) Intern. July 2020 - Now
 
 - **[brew AI neo scientists (brAIns)](https://sites.google.com/view/unist-brains?fbclid=IwAR0hv0jCFM27Bo37Fu9z_dy7Ni9_yis5vzNfUex2xaXTOMDJVKGFzw1twTo)**. Jan 2021 - Now
 
