@@ -13,7 +13,7 @@ Good day​​ Wecolme to my GitHub. My name is **Sorang Kim**. I am an undergra
 - Major : School of Computer Science Engineering (CSE).
 - Minor : School of Industrial Engineering (IE).
 
-## Experiment
+## Experience
 
 - [**Machine Intelligence and Information Learning lab**](https://sites.google.com/view/swyoon89/research-interests) Intern. July 2020 - Now
 
