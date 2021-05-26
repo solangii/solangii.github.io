@@ -1,4 +1,4 @@
-<img src="img/IMG_0145.jpg" style="zoom:10%;" />
+<img src="img/IMG_0145.jpge" style="zoom:10%;" />
 
 
 
