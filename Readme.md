@@ -1,8 +1,8 @@
-<img src="img/my.jpg" style="zoom:10%;" />
+<img src="img/my.jpg" style="zoom:50%;" />
 
 
 
-Good day​​ Wecolme to my GitHub. My name is **Sorang Kim**. I am an undergraduate who is interested in **deep learning**. Among deep learning, I am interested in **learning for generalization** and studying to solve the **limitations of deep learning** like **meta-learning** and **Lifelong-learning**.
+Good day​​ Wecolme to my GitHub. My name is **Solang Kim**. I am an undergraduate who is interested in **deep learning**. Among deep learning, I am interested in **learning for generalization** and studying to solve the **limitations of deep learning** like **meta-learning** and **Lifelong-learning**.
 
 
 
