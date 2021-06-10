@@ -1,4 +1,4 @@
-<img src="img/my.jpg" style="zoom:50%;" />
+<img src="img/my.jpg" style="zoom:30%;" />
 
 
 
