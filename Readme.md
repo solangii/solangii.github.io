@@ -1,4 +1,4 @@
-<img src="img/IMG_0145.jpge" style="zoom:10%;" />
+<img src="img/my.jpg" style="zoom:10%;" />
 
 
 
@@ -21,7 +21,7 @@ Good day​​ Wecolme to my GitHub. My name is **Sorang Kim**. I am an undergra
 
 - **Do:main**(Start-Up) Software Developer & Designer. Aug 2019 - Feb 2020
 
-- **Entrepreneurship & Data Science Summer Camp** (@University of Illinois at Urbana-Champaign) Cooperation with **[Creasion](https://iventure.illinois.edu/2019/06/01/creasion-creating-a-sustainable-water-source-for-indonesian-communities/)**. July 2019
+- **Entrepreneurship & Data Science Summer Camp** (@University of Illinois at Urbana-Champaign) Cooperation with **[Creasion](https://iventure.illinois.edu/creasion/)**. July 2019
 
   
 
