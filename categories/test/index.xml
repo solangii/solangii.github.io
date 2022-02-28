@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>화이팅 on Solang Kim</title>
-    <link>https://solangii.github.io/tags/%ED%99%94%EC%9D%B4%ED%8C%85/</link>
-    <description>Recent content in 화이팅 on Solang Kim</description>
+    <title>test on Solang Kim</title>
+    <link>https://solangii.github.io/categories/test/</link>
+    <description>Recent content in test on Solang Kim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Copyright © 2022, Solang Kim; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 22 Feb 2022 02:26:49 +0900</lastBuildDate><atom:link href="https://solangii.github.io/tags/%ED%99%94%EC%9D%B4%ED%8C%85/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Feb 2022 02:26:49 +0900</lastBuildDate><atom:link href="https://solangii.github.io/categories/test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>테스트</title>
       <link>https://solangii.github.io/posts/22-02-22/</link>

@@ -6,7 +6,7 @@
     <description>Recent content on Solang Kim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
+    <copyright>Copyright © 2022, Solang Kim; all rights reserved.</copyright>
     <lastBuildDate>Tue, 22 Feb 2022 02:26:49 +0900</lastBuildDate><atom:link href="https://solangii.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>테스트</title>
@@ -18,14 +18,21 @@
     </item>
     
     <item>
+      <title>Prototype Rectification for Few-Shot Learning 리뷰</title>
+      <link>https://solangii.github.io/posts/21-05-19/</link>
+      <pubDate>Wed, 19 May 2021 02:26:49 +0900</pubDate>
+      
+      <guid>https://solangii.github.io/posts/21-05-19/</guid>
+      <description>안녕하세요, 오늘은 &amp;ldquo;Prototype Rectification for Few-Shot Learning&amp;rdquo;(2020 ECCV oral)논문을 소개드리겠습니다. 제목에서 유추가능하듯 Prototype을 조정하여 Few-Shot learning을 진행한 논문입니다. 기존 ProtoNet에서 제시한 Prototype은 Support sample들을 단순히 산술평균을 하여 만들어집니다.</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://solangii.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://solangii.github.io/about/</guid>
-      <description>안녕하세요, 김소랑입니다👋 제 블로그에 와주셔서 감사합니다. 저는 인공지능을 공부하고 있는 석사과정 학생입니다. 그 중에서도 특히, Meta-Learning, Lifelong-Learning, Federated Learning과 같이 딥러닝의 한계를 해결하는 학습의 일반화와 관련된 문제에 더욱 관심이 많습니다.
-성장과 배움에 큰 가치를 두고 매일 성장하는 삶을 살려고 노력하고 있습니다. 블로그도 제가 배우고 성장하고 느낀것들을 기록하며 소소한 성취감을 느끼기 위해서 시작하게 되었습니다. 궁금한 점이나 전하고 싶은 말이 있다면 아래에 있는 경로 어디든 연락주셔도 좋습니다. 함께 성장합시다 🌱
- Education   Ulsan National Institute of Science and Technology (UNIST), Ulsan, South Korea</description>
+      <description>안녕하세요, 김소랑입니다👋 제 블로그에 와주셔서 감사합니다. 저는 인공지능을 공부하고 있는 석사과정 학생입니다. 그 중에서도 특히, Meta-Learning, Lifelong-Learning, Federated Learning과 같이 딥러닝의 한계를 해결하는 학습의 일반화와 관련된 문제에 더욱 관심이 많습니다.</description>
     </item>
     
   </channel>

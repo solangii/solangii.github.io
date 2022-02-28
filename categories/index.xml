@@ -6,6 +6,25 @@
     <description>Recent content in Categories on Solang Kim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright><atom:link href="https://solangii.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2022, Solang Kim; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 22 Feb 2022 02:26:49 +0900</lastBuildDate><atom:link href="https://solangii.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test</title>
+      <link>https://solangii.github.io/categories/test/</link>
+      <pubDate>Tue, 22 Feb 2022 02:26:49 +0900</pubDate>
+      
+      <guid>https://solangii.github.io/categories/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deep learning</title>
+      <link>https://solangii.github.io/categories/deep-learning/</link>
+      <pubDate>Wed, 19 May 2021 02:26:49 +0900</pubDate>
+      
+      <guid>https://solangii.github.io/categories/deep-learning/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
