@@ -171,6 +171,26 @@
     <h1>Prototype Rectification for Few-Shot Learning 리뷰</h1>
   </header>
 
+  <details class="toc" >
+	<summary>Table of Contents</summary>
+	
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#definition">Definition</a></li>
+    <li><a href="#method">Method</a>
+      <ul>
+        <li><a href="#intra-class-bias-줄이는-법--pseudo-labeling">intra-class bias 줄이는 법 : Pseudo Labeling</a></li>
+        <li><a href="#cross-class-bias-줄이는-법--shifting-term-xi">cross-class bias 줄이는 법 : shifting term $\xi$</a></li>
+        <li><a href="#전체-framework">전체 framework</a></li>
+      </ul>
+    </li>
+    <li><a href="#result">Result</a></li>
+    <li><a href="#결론">결론</a></li>
+  </ul>
+</nav>
+</details>
+
+
   <section class="post-content"><p>안녕하세요, 오늘은 <a href="https://arxiv.org/abs/1911.10713">&ldquo;Prototype Rectification for Few-Shot Learning&rdquo;</a>(2020 ECCV oral)논문을 소개드리겠습니다. 제목에서 유추가능하듯 Prototype을 조정하여 Few-Shot learning을 진행한 논문입니다. 기존 ProtoNet에서 제시한 Prototype은 Support sample들을 단순히 산술평균을 하여 만들어집니다. 이 때문에 Outlier에 민감하다는 단점이 있었는데요, 이 한계점을 타개하기 위하여 이 논문에서는 Prototype의 위치를 보다 좋은 위치로 수정하는 방법을 제안한 논문입니다.</p>
 <blockquote>
 <p>이 글을 보시기 읽기 전에, Few-shot learning에 대한 사전 이해가 있으면서, 그 중에서도 <a href="https://arxiv.org/abs/1703.05175">&ldquo;Prototypical Networks for Few-Shot Learning&rdquo;</a> 논문을 읽고 오신다면 더 이해가 수월 할 것 같습니다.</p>
