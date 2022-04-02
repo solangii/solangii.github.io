@@ -7,14 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Copyright © 2022, Solang Kim; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 22 Feb 2022 02:26:49 +0900</lastBuildDate><atom:link href="https://solangii.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Apr 2022 00:59:49 +0900</lastBuildDate><atom:link href="https://solangii.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>🛠테스트🛠</title>
+      <title>📌 PyTorch Snippets</title>
+      <link>https://solangii.github.io/posts/21-04-02-pytorch-snippets/</link>
+      <pubDate>Sat, 02 Apr 2022 00:59:49 +0900</pubDate>
+      
+      <guid>https://solangii.github.io/posts/21-04-02-pytorch-snippets/</guid>
+      <description>Pytorch를 사용하면서 알게된 사소하지만 은근 중요한 정보(꿀팁)들을 정리합니다. 사소한 내용들이라 잘 까먹기도 해서, 틈날때 다시 기억 상기 목적으로 기록합니다. 내용은 언제든지 추가될 수 있습니다.</description>
+    </item>
+    
+    <item>
+      <title>🛠테스트</title>
       <link>https://solangii.github.io/posts/22-02-22/</link>
       <pubDate>Tue, 22 Feb 2022 02:26:49 +0900</pubDate>
       
       <guid>https://solangii.github.io/posts/22-02-22/</guid>
-      <description>🚧 테스트용 게시글 입니다. 블로그 개발이 완료 되면 이 게시글은 삭제 될 예정입니다.
+      <description>테스트용 게시글 입니다. 블로그 개발이 완료 되면 이 게시글은 삭제 될 예정입니다.
 혹시 지나가시다가 개선점, 피드백 있으면 댓글 주시면 감사하겠습니다🤗</description>
     </item>
     

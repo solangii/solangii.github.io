@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pytorch on Solang Kim</title>
+    <link>https://solangii.github.io/tags/pytorch/</link>
+    <description>Recent content in pytorch on Solang Kim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <copyright>Copyright © 2022, Solang Kim; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 02 Apr 2022 00:59:49 +0900</lastBuildDate><atom:link href="https://solangii.github.io/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>📌 PyTorch Snippets</title>
+      <link>https://solangii.github.io/posts/21-04-02-pytorch-snippets/</link>
+      <pubDate>Sat, 02 Apr 2022 00:59:49 +0900</pubDate>
+      
+      <guid>https://solangii.github.io/posts/21-04-02-pytorch-snippets/</guid>
+      <description>Pytorch를 사용하면서 알게된 사소하지만 은근 중요한 정보(꿀팁)들을 정리합니다. 사소한 내용들이라 잘 까먹기도 해서, 틈날때 다시 기억 상기 목적으로 기록합니다. 내용은 언제든지 추가될 수 있습니다.</description>
+    </item>
+    
+  </channel>
+</rss>
