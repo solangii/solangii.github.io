@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="ko-kr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>Pytorch DP와 DDP - Solang Kim</title>
+
+  
+  
+  <meta name="description" content="torch.nn.DataParallel과 torch.nn.parallel.DistributedDataParallel 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다.
+DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-gpu 환경에서의 실험을 위한 함수입니다." />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://solangii.github.io/app.min.css" />
+
+  
+  <link rel="preload stylesheet" as="style" href="https://solangii.github.io/an-old-hope.min.css" />
+  <script
+    defer
+    src="https://solangii.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  <link rel="preload" as="image" href="https://solangii.github.io/theme.png" />
+  <link rel="preload" as="image" href="https://solangii.github.io/logo.png" />
+
+
+  
+  <link rel="preload" as="image" href="https://solangii.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://solangii.github.io/instagram.svg" />
+  
+
+  
+  <link rel="icon" href="https://solangii.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://solangii.github.io/apple-touch-icon.jpg" />
+
+  
+  <meta name="generator" content="Hugo 0.92.2" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Pytorch DP와 DDP" />
+<meta property="og:description" content="torch.nn.DataParallel과 torch.nn.parallel.DistributedDataParallel 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다.
+DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-gpu 환경에서의 실험을 위한 함수입니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solangii.github.io/posts/22-07-05-ddp/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-05T00:12:57+09:00" />
+<meta property="article:modified_time" content="2022-07-05T00:12:57+09:00" />
+
+
+  
+  <meta itemprop="name" content="Pytorch DP와 DDP">
+<meta itemprop="description" content="torch.nn.DataParallel과 torch.nn.parallel.DistributedDataParallel 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다.
+DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-gpu 환경에서의 실험을 위한 함수입니다."><meta itemprop="datePublished" content="2022-07-05T00:12:57+09:00" />
+<meta itemprop="dateModified" content="2022-07-05T00:12:57+09:00" />
+<meta itemprop="wordCount" content="211">
+<meta itemprop="keywords" content="pytorch," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pytorch DP와 DDP"/>
+<meta name="twitter:description" content="torch.nn.DataParallel과 torch.nn.parallel.DistributedDataParallel 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다.
+DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-gpu 환경에서의 실험을 위한 함수입니다."/>
+
+  
+  
+</head>
+
+
+  <body class="not-ready" data-menu="true">
+    <header class="header">
+  
+  <p class="logo">
+    <a class="site-name" href="https://solangii.github.io/">Solang Kim</a>
+  </p>
+  
+
+  <script>
+    
+    
+    
+    
+
+    
+      
+      
+    
+
+    
+    
+
+    
+    
+  </script>
+
+
+  
+  
+  <nav class="menu">
+    
+    <a class="" href="/about/">👀 About</a>
+    
+    <a class="" href="/posts/">📚 Posts</a>
+    
+  </nav>
+  
+
+  
+  <nav class="social">
+    
+    <a
+      class="github"
+      style="--url: url(./github.svg)"
+      href="https://github.com/solangii"
+      target="_blank"
+    ></a>
+    
+    <a
+      class="instagram"
+      style="--url: url(./instagram.svg)"
+      href="https://instagram.com/s_rang__"
+      target="_blank"
+    ></a>
+    
+  </nav>
+  
+</header>
+
+
+    <main class="main">
+
+<article class="post-single">
+
+    <header class="post-title">
+    <p>
+      <h3>snippet</h3>
+      
+      <time>Jul 5, 2022</time>
+      
+      
+    </p>
+    <h1>Pytorch DP와 DDP</h1>
+  </header>
+
+  
+<details class="toc" >
+	<summary>Table of Contents</summary>
+	
+	<nav id="TableOfContents"></nav>
+</details>
+
+
+  <section class="post-content"><p><code>torch.nn.DataParallel</code>과 <code>torch.nn.parallel.DistributedDataParallel</code> 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 <em>간략히</em> 설명합니다.</p>
+<p><a href="https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html">DataParallel(DP)</a>과 <a href="https://pytorch.org/docs/stable/notes/ddp.html#ddp">DistributedDataParallel(DDP)</a>은 모두 pytorch에서 multi-gpu 환경에서의 실험을 위한 함수입니다.</p>
+<p>두 함수 모두 model을 지정된 여러 gpu에 복사를 하고 data를(batch단위로) gpu별로 할당해주며 동작을 합니다. 그러나 time performance를 살펴보면 DDP가 훨씬 좋습니다. Key Difference는 multi-threading을 사용하냐 / multi-processing을 사용하냐에 따라 차이가 발생하게 됩니다.</p>
+<p>muti-thread, multi-process에 따른 차이를 설명드리기 위해 thread와 process의 차이를 간략히 설명드립니다. thread는 process내에서 memory-shared가 이뤄집니다. 반면, process는 process간에 memory가 공유되지 않습니다. 따라서 memory가 공유되는 multi-thread환경에서는 context swithch가 발생할 때, memory leak이 발생할 수 있다는 것을 유념해야합니다.</p>
+<p>python interpreter에서는 multi-thread 환경에서의 memory leak을 대비하여 GIL(global interpreter lock)이라는 mutex를 걸어줍니다. 이로인해 동시간대에 thread 하나만 점유를 하게 되는데요 (다른 thread는 대기중) 사실상 GIL로 인해 &ldquo;multi&rdquo;-thread임에도 불구하고 병렬로 동작하지 못하는 현상이 발생하게 됩니다.</p>
+<p>DP는 multi-threading을 이용합니다. 따라서 위에서 언급한 상황이 발생합니다. batch단위로 gradient를 계산하기 위해 여러개의 thread가 multi-gpu에 대기해 있는 상황인데, GIL로 인해 하나의 thread만 동시간대에 동작하게 되니 사실상 parallel하게 동작하지 못하고 동 시간대에 하나의 thread만 점유를 하게 됩니다. 이로 인해, performance overhead가 일어납니다.</p>
+<p>반면, DDP는 multi-prossing을 이용합니다. batch단위로 gradient를 계산하기 위해 여러개의 process가 multi-gpu에 대기해 있는 상황인데 process간에 memory-shared가 없으니 GIL같은 mutex가 필요 없습니다. 이로 인해 여러 Process가 동시간대에 parallel하게 동작할 수 있게 됩니다. 따라서 DP보다 빠른 performance를 보입니다.</p>
+<p><strong>결론, DDP 쓰자!</strong></p>
+<hr>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html">https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html</a></li>
+<li><a href="https://pytorch.org/docs/stable/notes/cuda.html#cuda-nn-ddp-instead">https://pytorch.org/docs/stable/notes/cuda.html#cuda-nn-ddp-instead</a></li>
+<li><a href="https://pytorch.org/docs/stable/notes/ddp.html#ddp">https://pytorch.org/docs/stable/notes/ddp.html#ddp</a></li>
+<li><a href="https://dgkim5360.tistory.com/entry/understanding-the-global-interpreter-lock-of-cpython">https://dgkim5360.tistory.com/entry/understanding-the-global-interpreter-lock-of-cpython</a></li>
+</ul>
+</section>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
+
+
+ 
+
+  
+    
+  
+  <footer class="post-tags">
+     
+    <a href="https://solangii.github.io/tags/pytorch">#pytorch</a>
+    
+  </footer>
+  
+
+  
+    
+  
+  <nav class="post-nav">
+     
+    <a class="next" href="https://solangii.github.io/posts/22-04-02-pytorch-snippets/"><span>📌 PyTorch Snippets</span><span>→</span></a>
+    
+  </nav>
+  
+
+  
+    
+  <script src="https://utteranc.es/client.js"
+        repo="solangii/solangii.github.io"
+        issue-term="title"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+  
+
+</article>
+
+
+</main>
+
+    <footer class="footer">
+  <p>&copy; 2022 <a href="https://solangii.github.io/">Solang Kim</a></p>
+</footer>
+
+  </body>
+</html>

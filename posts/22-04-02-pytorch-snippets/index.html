@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="ko-kr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>📌 PyTorch Snippets - Solang Kim</title>
+
+  
+  
+  <meta name="description" content="Pytorch를 사용하면서 알게된 사소하지만 은근 중요한 정보(꿀팁)들을 정리합니다. 사소한 내용들이라 잘 까먹기도 해서, 틈날때 다시 기억 상기 목적으로 기록합니다. 내용은 언제든지 추가될 수 있습니다." />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://solangii.github.io/app.min.css" />
+
+  
+  <link rel="preload stylesheet" as="style" href="https://solangii.github.io/an-old-hope.min.css" />
+  <script
+    defer
+    src="https://solangii.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  <link rel="preload" as="image" href="https://solangii.github.io/theme.png" />
+  <link rel="preload" as="image" href="https://solangii.github.io/logo.png" />
+
+
+  
+  <link rel="preload" as="image" href="https://solangii.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://solangii.github.io/instagram.svg" />
+  
+
+  
+  <link rel="icon" href="https://solangii.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://solangii.github.io/apple-touch-icon.jpg" />
+
+  
+  <meta name="generator" content="Hugo 0.92.2" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="📌 PyTorch Snippets" />
+<meta property="og:description" content="Pytorch를 사용하면서 알게된 사소하지만 은근 중요한 정보(꿀팁)들을 정리합니다. 사소한 내용들이라 잘 까먹기도 해서, 틈날때 다시 기억 상기 목적으로 기록합니다. 내용은 언제든지 추가될 수 있습니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solangii.github.io/posts/22-04-02-pytorch-snippets/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-02T00:59:49+09:00" />
+<meta property="article:modified_time" content="2022-04-02T00:59:49+09:00" />
+
+
+  
+  <meta itemprop="name" content="📌 PyTorch Snippets">
+<meta itemprop="description" content="Pytorch를 사용하면서 알게된 사소하지만 은근 중요한 정보(꿀팁)들을 정리합니다. 사소한 내용들이라 잘 까먹기도 해서, 틈날때 다시 기억 상기 목적으로 기록합니다. 내용은 언제든지 추가될 수 있습니다."><meta itemprop="datePublished" content="2022-04-02T00:59:49+09:00" />
+<meta itemprop="dateModified" content="2022-04-02T00:59:49+09:00" />
+<meta itemprop="wordCount" content="438">
+<meta itemprop="keywords" content="pytorch," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="📌 PyTorch Snippets"/>
+<meta name="twitter:description" content="Pytorch를 사용하면서 알게된 사소하지만 은근 중요한 정보(꿀팁)들을 정리합니다. 사소한 내용들이라 잘 까먹기도 해서, 틈날때 다시 기억 상기 목적으로 기록합니다. 내용은 언제든지 추가될 수 있습니다."/>
+
+  
+  
+</head>
+
+
+  <body class="not-ready" data-menu="true">
+    <header class="header">
+  
+  <p class="logo">
+    <a class="site-name" href="https://solangii.github.io/">Solang Kim</a>
+  </p>
+  
+
+  <script>
+    
+    
+    
+    
+
+    
+      
+      
+    
+
+    
+    
+
+    
+    
+  </script>
+
+
+  
+  
+  <nav class="menu">
+    
+    <a class="" href="/about/">👀 About</a>
+    
+    <a class="" href="/posts/">📚 Posts</a>
+    
+  </nav>
+  
+
+  
+  <nav class="social">
+    
+    <a
+      class="github"
+      style="--url: url(./github.svg)"
+      href="https://github.com/solangii"
+      target="_blank"
+    ></a>
+    
+    <a
+      class="instagram"
+      style="--url: url(./instagram.svg)"
+      href="https://instagram.com/s_rang__"
+      target="_blank"
+    ></a>
+    
+  </nav>
+  
+</header>
+
+
+    <main class="main">
+
+<article class="post-single">
+
+    <header class="post-title">
+    <p>
+      <h3>snippet</h3>
+      
+      <time>Apr 2, 2022</time>
+      
+      
+    </p>
+    <h1>📌 PyTorch Snippets</h1>
+  </header>
+
+  
+<details class="toc" >
+	<summary>Table of Contents</summary>
+	
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#pytorch-tensor">Pytorch Tensor</a></li>
+    <li><a href="#pytorch-autograd-2-3">Pytorch Autograd  </a></li>
+    <li><a href="#pytorch-module">Pytorch Module</a></li>
+    <li><a href="#pytorch-parameter">Pytorch Parameter</a></li>
+    <li><a href="#pytorch-buffer">Pytorch Buffer</a></li>
+    <li><a href="#pytorch-hook">Pytorch Hook</a></li>
+  </ul>
+</nav>
+</details>
+
+
+  <section class="post-content"><p>Pytorch를 사용하면서 알게된 사소하지만 은근 중요한 정보(꿀팁)들을 정리합니다. 사소한 내용들이라 잘 까먹기도 해서, 틈날때 다시  기억 상기 목적으로 기록합니다. 내용은 언제든지 추가될 수 있습니다.</p>
+<h2 id="pytorch-tensor">Pytorch Tensor</h2>
+<ul>
+<li>
+<p>Tensor와 Parameter의 차이: Tensor는 <code>requires_grad</code>의 default 설정이 <strong>False</strong>이나 parameter는 <code>requires_grad</code> 의 default 설정이 <strong>True</strong>이다.</p>
+</li>
+<li>
+<p>Tensor의 Shape을 조작해야하는 경우 메모리 저장상태가 비연속적으로 변경되는지(ex, <code>transpose()</code>, <code>expand()</code>, <code>view()</code>)  유의해야한다. 경우에 따라 <code>contiguous()</code>, <code>reshape()</code>등을 사용하여 연속적인 메모리 저장상태로 전환시켜줘야 한다.</p>
+</li>
+<li>
+<p>underbar의 이용 - <code>torch.add()</code> 와 <code>torch.add_()</code>의 차이  <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<ul>
+<li>underbar 있는 경우 (<code>add_()</code>): in_place 연산, 새로운 tensor를 만들지 않고 기존 tensor에 연산을 한다.</li>
+<li>underbar 없는 경우 (<code>add()</code>): 새로운 tensor를 return</li>
+</ul>
+</li>
+</ul>
+<h2 id="pytorch-autograd-2-3">Pytorch Autograd <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></h2>
+<ul>
+<li>
+<p>graph를 한번 만들고 재 사용하려면 <code>retain_graph=True</code> 옵션을 사용해야하고, <code>backward()</code>연산을 여러번 해줄 때에는 gradient 값이 계속 더해지기 때문에 <code>x.grad.zero_()</code>와 같은 gradient초기화 과정이 필요하다.</p>
+</li>
+<li>
+<p>autograd에서 지원하지 않는 연산을 해야할 때는 forward, backward연산을 직접 구현해야하며, 이 때 주의사항은</p>
+<ol>
+<li>class를 만들 때 <code>torch.autograd.Function</code>를 상속하기</li>
+<li>forward할 때 결과를 따로 기록하기 (<code>ctx.save_for_backward()</code> 이용)</li>
+<li>backward를 직접 구현했을 때, backward가 정상적으로 작동하는지 확인할 때는 <code>torch.autograd.gradcheck()</code> 를 호출하여 확인하는 것이 유용하다.</li>
+</ol>
+</li>
+<li>
+<p>evaluation 과정 같이 backward를 하지 않는 경우에는 메모리 사용량을 줄이기 위해 <code>torch.no_grad()</code>를 사용하는 것이 좋다. 해당 부분에서 모든 변수들의 <code>requires_grad=False</code>로 지정이 된다.</p>
+</li>
+<li>
+<p><code>create_graph</code>의 역할 : 만약 2차 미분이 필요할 경우, 내부 그래프에서 연산 식을 따로 저장을 안하기 때문에 2차 미분을 구하려하면 에러가 난다. 이때, <code>create_graph=True</code>로 해주면 그래프 내부에서 거쳐가는 노드들의 편미분 연산식들을 모두 저장하기 때문에 가능해진다. (메모리 cost는 많이 커질 것 같다)</p>
+</li>
+<li>
+<p>중간에 gradient 값을 임의로 변경해야할 때, 변경한 <code>grad</code>값은 이후 계산에도 영향을 미친다.</p>
+</li>
+</ul>
+<h2 id="pytorch-module">Pytorch Module</h2>
+<p>Module은 주로 pytorch에 내장되어있는 여러 Module들을 조합해서 새로운 Module을 만들 때 직접 Module을 정의해서 사용하게 된다.</p>
+<ul>
+<li>
+<p><code>class my_module(torch.nn.Module)</code>을 정의하면 <code>self.__init__()</code>에선 다른 모듈들을 불러오는데 이때 <code>Module.__setattr__()</code> 내부에서 <code>add_module()</code>이 작용해서 포함한 모듈을 잘 인식할 수 있게 된다.</p>
+<ul>
+<li>이때 <code>__init__</code>에서 사용할 수 있는 정의 방법 중 꿀팁이라고 생각되는 게 <code>torch.nn.ModuleList()</code>, <code>torch.nn.ModuleDict()</code> 방법이다. 각각 list형태로 혹은 dict형태로 모듈을 저장함과 동시에 자동으로 모듈을 인식할 수 있게끔 내장 함수에서 처리해주기 때문에 편리한 듯 하다.</li>
+</ul>
+</li>
+<li>
+<p>Module 파트에서는 Module을 여러개 묶어 사용할 때, 혹은 모듈 안에서 다른 모듈을 호출 할 때, <code>add_module()</code> 함수가 (자동이든 수동이든) 호출되어 모듈을 인식할 수 있게끔 하는 것이 중요 point였다.</p>
+<ul>
+<li><code>add_module()</code>을 수동으로 호출</li>
+<li>파이썬 리스트 대신 <code>ModuleList()</code>사용, 파이썬 딕셔너리 대신 <code>ModuleDict()</code>사용</li>
+</ul>
+</li>
+</ul>
+<h2 id="pytorch-parameter">Pytorch Parameter</h2>
+<ul>
+<li>Parmeter를 모듈에 추가할 때 <code>register_parameter()</code> 함수가 (자동/수동으로) 호출되어 모듈의 파라미터로 인식할 수 있게끔 하는 것이 중요하다.
+<ul>
+<li><code>register_parameter()</code>를 수동으로 호출</li>
+<li>파이썬 리스트, 딕셔너리 대신 <code>ParameterList()</code>, <code>ParameterDict()</code> 사용</li>
+</ul>
+</li>
+</ul>
+<h2 id="pytorch-buffer">Pytorch Buffer</h2>
+<ul>
+<li>
+<p>Buffer는 Module에 저장해두고 학습에 사용하진 않는 Tensor. <code>register_buffer()</code> 를 이용해 정의한다. <u>Buffer는 train mode일 때만 업데이트가 되고 eval mode에서는 값이 변하지 않는다.</u></p>
+<ul>
+<li>train mode일때만 업뎃 + eval mode에선 변하지 않는 변수 중 가장 먼저 떠오르는 건 역시 BN이다. Batch Normalization의 moving average mean, moving average variance 값을 저장할 때 buffer 사용한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="pytorch-hook">Pytorch Hook</h2>
+<ul>
+<li>Hook은 Module 내부를 건들이지 않으면서 Module의 forward, backward의 값들을 관찰/수정할 때 사용한다.</li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://stackoverflow.com/questions/52920098/what-does-the-underscore-suffix-in-pytorch-functions-mean">https://stackoverflow.com/questions/52920098/what-does-the-underscore-suffix-in-pytorch-functions-mean</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://pytorch.org/docs/stable/notes/autograd.html">https://pytorch.org/docs/stable/notes/autograd.html</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://teamdable.github.io/techblog/PyTorch-Autograd">https://teamdable.github.io/techblog/PyTorch-Autograd</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</section>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
+
+
+ 
+
+  
+    
+  
+  <footer class="post-tags">
+     
+    <a href="https://solangii.github.io/tags/pytorch">#pytorch</a>
+    
+  </footer>
+  
+
+  
+    
+  
+  <nav class="post-nav">
+    
+    <a class="prev" href="https://solangii.github.io/posts/22-07-05-ddp/"><span>←</span><span>Pytorch DP와 DDP</span></a>
+     
+    <a class="next" href="https://solangii.github.io/posts/21-05-19/"><span>Prototype Rectification for Few-Shot Learning 리뷰</span><span>→</span></a>
+    
+  </nav>
+  
+
+  
+    
+  <script src="https://utteranc.es/client.js"
+        repo="solangii/solangii.github.io"
+        issue-term="title"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+  
+
+</article>
+
+
+</main>
+
+    <footer class="footer">
+  <p>&copy; 2022 <a href="https://solangii.github.io/">Solang Kim</a></p>
+</footer>
+
+  </body>
+</html>
