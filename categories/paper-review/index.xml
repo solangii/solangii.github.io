@@ -14,7 +14,7 @@
       <pubDate>Wed, 19 May 2021 02:26:49 +0900</pubDate>
       
       <guid>https://solangii.github.io/posts/21-05-19/</guid>
-      <description>안녕하세요, 오늘은 &amp;ldquo;Prototype Rectification for Few-Shot Learning&amp;rdquo;(2020 ECCV oral)논문을 소개드리겠습니다. 제목에서 유추가능하듯 Prototype을 조정하여 Few-Shot learning을 진행한 논문입니다. 기존 ProtoNet에서 제시한 Prototype은 Support sample들을 단순히 산술평균을 하여 만들어집니다.</description>
+      <description>안녕하세요, 오늘은 &amp;ldquo;Prototype Rectification for Few-Shot Learning&amp;rdquo;(2020 ECCV oral)논문을 소개드리겠습니다.</description>
     </item>
     
   </channel>

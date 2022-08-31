@@ -23,8 +23,7 @@
 
   
   
-  <meta name="description" content="torch.nn.DataParallel과 torch.nn.parallel.DistributedDataParallel 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다.
-DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-gpu 환경에서의 실험을 위한 함수입니다." />
+  <meta name="description" content="torch.nn.DataParallel(DP)과 torch.nn.parallel.DistributedDataParallel(DDP) 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다." />
   <meta name="author" content="" />
   
 
@@ -61,7 +60,7 @@ DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-g
   <link rel="apple-touch-icon" href="https://solangii.github.io/apple-touch-icon.jpg" />
 
   
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.102.1" />
 
   
   
@@ -76,8 +75,7 @@ DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-g
   
   
   <meta property="og:title" content="Pytorch DP와 DDP" />
-<meta property="og:description" content="torch.nn.DataParallel과 torch.nn.parallel.DistributedDataParallel 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다.
-DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-gpu 환경에서의 실험을 위한 함수입니다." />
+<meta property="og:description" content="torch.nn.DataParallel(DP)과 torch.nn.parallel.DistributedDataParallel(DDP) 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://solangii.github.io/posts/22-07-05-ddp/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-05T00:12:57+09:00" />
@@ -86,16 +84,14 @@ DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-g
 
   
   <meta itemprop="name" content="Pytorch DP와 DDP">
-<meta itemprop="description" content="torch.nn.DataParallel과 torch.nn.parallel.DistributedDataParallel 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다.
-DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-gpu 환경에서의 실험을 위한 함수입니다."><meta itemprop="datePublished" content="2022-07-05T00:12:57+09:00" />
+<meta itemprop="description" content="torch.nn.DataParallel(DP)과 torch.nn.parallel.DistributedDataParallel(DDP) 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다."><meta itemprop="datePublished" content="2022-07-05T00:12:57+09:00" />
 <meta itemprop="dateModified" content="2022-07-05T00:12:57+09:00" />
 <meta itemprop="wordCount" content="211">
-<meta itemprop="keywords" content="pytorch," />
+<meta itemprop="keywords" content="pytorch,ddp," />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pytorch DP와 DDP"/>
-<meta name="twitter:description" content="torch.nn.DataParallel과 torch.nn.parallel.DistributedDataParallel 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다.
-DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-gpu 환경에서의 실험을 위한 함수입니다."/>
+<meta name="twitter:description" content="torch.nn.DataParallel(DP)과 torch.nn.parallel.DistributedDataParallel(DDP) 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다."/>
 
   
   
@@ -170,7 +166,7 @@ DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-g
     <p>
       <h3>snippet</h3>
       
-      <time>Jul 5, 2022</time>
+      <time>2022. 7. 5.</time>
       
       
     </p>
@@ -178,20 +174,15 @@ DataParallel(DP)과 DistributedDataParallel(DDP)은 모두 pytorch에서 multi-g
   </header>
 
   
-<details class="toc" >
-	<summary>Table of Contents</summary>
-	
-	<nav id="TableOfContents"></nav>
-</details>
 
-
-  <section class="post-content"><p><code>torch.nn.DataParallel</code>과 <code>torch.nn.parallel.DistributedDataParallel</code> 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 <em>간략히</em> 설명합니다.</p>
+  <section class="post-content"><p><code>torch.nn.DataParallel</code>(DP)과 <code>torch.nn.parallel.DistributedDataParallel</code>(DDP) 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 <em>간략히</em> 설명합니다.</p>
+<hr>
 <p><a href="https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html">DataParallel(DP)</a>과 <a href="https://pytorch.org/docs/stable/notes/ddp.html#ddp">DistributedDataParallel(DDP)</a>은 모두 pytorch에서 multi-gpu 환경에서의 실험을 위한 함수입니다.</p>
-<p>두 함수 모두 model을 지정된 여러 gpu에 복사를 하고 data를(batch단위로) gpu별로 할당해주며 동작을 합니다. 그러나 time performance를 살펴보면 DDP가 훨씬 좋습니다. Key Difference는 multi-threading을 사용하냐 / multi-processing을 사용하냐에 따라 차이가 발생하게 됩니다.</p>
+<p>두 함수 모두 model을 지정된 여러 gpu에 복사를 하고 data를(batch단위로) gpu별로 할당해주며 동작을 합니다. 그러나 time performance를 살펴보면 DDP가 훨씬 좋습니다. <strong>Key Difference는 multi-threading을 사용하냐 / multi-processing을 사용하냐에 따라 차이가 발생하게 됩니다.</strong></p>
 <p>muti-thread, multi-process에 따른 차이를 설명드리기 위해 thread와 process의 차이를 간략히 설명드립니다. thread는 process내에서 memory-shared가 이뤄집니다. 반면, process는 process간에 memory가 공유되지 않습니다. 따라서 memory가 공유되는 multi-thread환경에서는 context swithch가 발생할 때, memory leak이 발생할 수 있다는 것을 유념해야합니다.</p>
 <p>python interpreter에서는 multi-thread 환경에서의 memory leak을 대비하여 GIL(global interpreter lock)이라는 mutex를 걸어줍니다. 이로인해 동시간대에 thread 하나만 점유를 하게 되는데요 (다른 thread는 대기중) 사실상 GIL로 인해 &ldquo;multi&rdquo;-thread임에도 불구하고 병렬로 동작하지 못하는 현상이 발생하게 됩니다.</p>
-<p>DP는 multi-threading을 이용합니다. 따라서 위에서 언급한 상황이 발생합니다. batch단위로 gradient를 계산하기 위해 여러개의 thread가 multi-gpu에 대기해 있는 상황인데, GIL로 인해 하나의 thread만 동시간대에 동작하게 되니 사실상 parallel하게 동작하지 못하고 동 시간대에 하나의 thread만 점유를 하게 됩니다. 이로 인해, performance overhead가 일어납니다.</p>
-<p>반면, DDP는 multi-prossing을 이용합니다. batch단위로 gradient를 계산하기 위해 여러개의 process가 multi-gpu에 대기해 있는 상황인데 process간에 memory-shared가 없으니 GIL같은 mutex가 필요 없습니다. 이로 인해 여러 Process가 동시간대에 parallel하게 동작할 수 있게 됩니다. 따라서 DP보다 빠른 performance를 보입니다.</p>
+<p><strong>DP는 multi-threading을 이용합니다</strong>. 따라서 위에서 언급한 상황이 발생합니다. batch단위로 gradient를 계산하기 위해 여러개의 thread가 multi-gpu에 대기해 있는 상황인데, <strong>GIL로 인해 하나의 thread만 동시간대에 동작</strong>하게 되니 사실상 parallel하게 동작하지 못하고 동 시간대에 하나의 thread만 점유를 하게 됩니다. 이로 인해, performance overhead가 일어납니다.</p>
+<p><strong>반면, DDP는 multi-prossing을 이용합니다.</strong> batch단위로 gradient를 계산하기 위해 여러개의 process가 multi-gpu에 대기해 있는 상황인데 process간에 memory-shared가 없으니 GIL같은 mutex가 필요 없습니다. 이로 인해 여러 Process가 동시간대에 parallel하게 동작할 수 있게 됩니다. 따라서 DP보다 빠른 performance를 보입니다.</p>
 <p><strong>결론, DDP 쓰자!</strong></p>
 <hr>
 <p><strong>Reference</strong></p>
@@ -241,6 +232,8 @@ MathJax.Hub.Config({
   <footer class="post-tags">
      
     <a href="https://solangii.github.io/tags/pytorch">#pytorch</a>
+     
+    <a href="https://solangii.github.io/tags/ddp">#ddp</a>
     
   </footer>
   
@@ -249,6 +242,8 @@ MathJax.Hub.Config({
     
   
   <nav class="post-nav">
+    
+    <a class="prev" href="https://solangii.github.io/posts/22-08-31-kubenetes-cil/"><span>←</span><span>🎯 Kubenetes Snippets</span></a>
      
     <a class="next" href="https://solangii.github.io/posts/22-04-02-pytorch-snippets/"><span>📌 PyTorch Snippets</span><span>→</span></a>
     

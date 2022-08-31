@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mlops on Solang Kim</title>
+    <link>https://solangii.github.io/tags/mlops/</link>
+    <description>Recent content in mlops on Solang Kim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <copyright>Copyright © 2022, Solang Kim; all rights reserved.</copyright>
+    <lastBuildDate>Wed, 31 Aug 2022 00:12:57 +0900</lastBuildDate><atom:link href="https://solangii.github.io/tags/mlops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🎯 Kubenetes Snippets</title>
+      <link>https://solangii.github.io/posts/22-08-31-kubenetes-cil/</link>
+      <pubDate>Wed, 31 Aug 2022 00:12:57 +0900</pubDate>
+      
+      <guid>https://solangii.github.io/posts/22-08-31-kubenetes-cil/</guid>
+      <description>자주 사용하는 Kubenetes 명령어를 정리합니다.</description>
+    </item>
+    
+  </channel>
+</rss>

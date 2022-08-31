@@ -2,25 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://solangii.github.io/posts/22-08-31-kubenetes-cil/</loc>
+    <lastmod>2022-08-31T00:12:57+09:00</lastmod>
+  </url><url>
     <loc>https://solangii.github.io/categories/</loc>
-    <lastmod>2022-07-05T00:12:57+09:00</lastmod>
+    <lastmod>2022-08-31T00:12:57+09:00</lastmod>
+  </url><url>
+    <loc>https://solangii.github.io/tags/kubenetes/</loc>
+    <lastmod>2022-08-31T00:12:57+09:00</lastmod>
+  </url><url>
+    <loc>https://solangii.github.io/tags/mlops/</loc>
+    <lastmod>2022-08-31T00:12:57+09:00</lastmod>
   </url><url>
     <loc>https://solangii.github.io/posts/</loc>
+    <lastmod>2022-08-31T00:12:57+09:00</lastmod>
+  </url><url>
+    <loc>https://solangii.github.io/categories/snippet/</loc>
+    <lastmod>2022-08-31T00:12:57+09:00</lastmod>
+  </url><url>
+    <loc>https://solangii.github.io/</loc>
+    <lastmod>2022-08-31T00:12:57+09:00</lastmod>
+  </url><url>
+    <loc>https://solangii.github.io/tags/</loc>
+    <lastmod>2022-08-31T00:12:57+09:00</lastmod>
+  </url><url>
+    <loc>https://solangii.github.io/tags/ddp/</loc>
     <lastmod>2022-07-05T00:12:57+09:00</lastmod>
   </url><url>
     <loc>https://solangii.github.io/tags/pytorch/</loc>
     <lastmod>2022-07-05T00:12:57+09:00</lastmod>
   </url><url>
     <loc>https://solangii.github.io/posts/22-07-05-ddp/</loc>
-    <lastmod>2022-07-05T00:12:57+09:00</lastmod>
-  </url><url>
-    <loc>https://solangii.github.io/categories/snippet/</loc>
-    <lastmod>2022-07-05T00:12:57+09:00</lastmod>
-  </url><url>
-    <loc>https://solangii.github.io/</loc>
-    <lastmod>2022-07-05T00:12:57+09:00</lastmod>
-  </url><url>
-    <loc>https://solangii.github.io/tags/</loc>
     <lastmod>2022-07-05T00:12:57+09:00</lastmod>
   </url><url>
     <loc>https://solangii.github.io/posts/22-04-02-pytorch-snippets/</loc>

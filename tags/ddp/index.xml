@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pytorch on Solang Kim</title>
-    <link>https://solangii.github.io/tags/pytorch/</link>
-    <description>Recent content in pytorch on Solang Kim</description>
+    <title>ddp on Solang Kim</title>
+    <link>https://solangii.github.io/tags/ddp/</link>
+    <description>Recent content in ddp on Solang Kim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Copyright © 2022, Solang Kim; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 05 Jul 2022 00:12:57 +0900</lastBuildDate><atom:link href="https://solangii.github.io/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Jul 2022 00:12:57 +0900</lastBuildDate><atom:link href="https://solangii.github.io/tags/ddp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pytorch DP와 DDP</title>
       <link>https://solangii.github.io/posts/22-07-05-ddp/</link>
@@ -15,15 +15,6 @@
       
       <guid>https://solangii.github.io/posts/22-07-05-ddp/</guid>
       <description>torch.nn.DataParallel(DP)과 torch.nn.parallel.DistributedDataParallel(DDP) 의 차이점에 대해 알아보고, DP와 DDP 중 왜 DDP를 사용해야하는 지에 대해 간략히 설명합니다.</description>
-    </item>
-    
-    <item>
-      <title>📌 PyTorch Snippets</title>
-      <link>https://solangii.github.io/posts/22-04-02-pytorch-snippets/</link>
-      <pubDate>Sat, 02 Apr 2022 00:59:49 +0900</pubDate>
-      
-      <guid>https://solangii.github.io/posts/22-04-02-pytorch-snippets/</guid>
-      <description>Pytorch를 사용하면서 알게된 사소하지만 은근 중요한 정보(꿀팁)들을 정리합니다.</description>
     </item>
     
   </channel>
